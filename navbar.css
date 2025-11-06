@@ -1,0 +1,156 @@
+/* Navbar.css - simple Flipkart like navbar */
+
+:root{
+  --fk-blue: #2874f0;
+  --fk-yellow: #ffcc00;
+  --text: #111;
+  --muted: #666;
+  --bg: #fff;
+  --shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.fk-navbar{
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-family: system-ui, sans-serif;
+}
+
+.fk-container{
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+}
+
+/* Left */
+.fk-left{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo{
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+}
+
+.logo-blue{ color: var(--fk-blue); }
+.logo-yellow{ color: var(--fk-yellow); }
+
+/* Hamburger (mobile) */
+.hamburger{
+  display: none;
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+.hamburger .bar{
+  display:block;
+  width:20px;
+  height:2px;
+  background:#444;
+  margin:3px 0;
+  border-radius:2px;
+}
+
+/* Search */
+.fk-search{
+  flex: 1;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  max-width: 600px;
+}
+.search-input{
+  flex:1;
+  padding:10px 12px;
+  border-radius:2px;
+  border:1px solid #e6e6e6;
+  outline:none;
+  font-size:14px;
+}
+.search-input:focus{
+  box-shadow:0 0 0 3px rgba(40,116,240,0.12);
+  border-color: var(--fk-blue);
+}
+.search-btn{
+  padding:10px 12px;
+  border-radius:2px;
+  border: none;
+  cursor:pointer;
+  background:var(--fk-blue);
+  color:#fff;
+  font-weight:600;
+}
+
+/* Right links */
+.fk-right{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.nav-link{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:600;
+  padding:8px 10px;
+  border-radius:4px;
+}
+.nav-link:hover{ background:#f5f5f5; }
+
+.nav-cart{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  color:var(--text);
+  padding:6px 8px;
+  border-radius:6px;
+}
+.cart-icon{ font-size:18px; }
+.cart-count{
+  background:var(--fk-blue);
+  color:#fff;
+  padding:2px 6px;
+  border-radius:12px;
+  font-size:12px;
+  font-weight:700;
+}
+
+/* Mobile styles */
+@media (max-width: 800px){
+  .hamburger{ display:block; }
+  .fk-search{ display:none; }
+  .fk-right{ display:none; }
+
+  .fk-search.show-mobile{ display:flex; width:100%; padding:8px 16px; }
+  .fk-right.show-mobile{ display:flex; flex-direction:column; gap:6px; padding:8px 16px; align-items:flex-start; }
+
+  .mobile-drop{
+    display:none;
+  }
+  .mobile-drop.open{
+    display:block;
+    background:#fff;
+    border-top:1px solid #eee;
+    padding:8px 16px;
+  }
+  .mobile-link{
+    display:block;
+    padding:8px 6px;
+    text-decoration:none;
+    color:var(--text);
+    font-weight:600;
+  }
+}
