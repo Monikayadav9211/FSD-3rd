@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 10px;
+  font-size: medium;
+}
+
+p {
+  margin: 10px;
+  font-size: small;
+  font-family: 'Times New Roman', Times, serif ;
+}
+
+.container {
+  display: flex;          /* do part side by side */
+  gap: 20px;              /* dono ke beech space */
+ /* blue background */
+  padding: 20px;
+}
+
+.left, .right {
+  flex: 1;                /* dono equal width */
+  padding: 20px;
+  border-radius: 8px;
+  width: 200px;
+  height: 200px;
+  
+}
+
+.left {
+  background: #fff5cc;  
+  width: 400px;
+  height: 300px;
+
+   
+}
+
+.right {
+  background: #ccffcc; 
+  width: 100px;
+  height: 200px;
+   
+}
